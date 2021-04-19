@@ -1,0 +1,190 @@
+<div class="card-wrapper">
+    <div class="card" style="width: 100%">
+
+        <h2 class="center">All Users</h2>
+
+        <table class="table" style="margin-right: auto;margin-left: auto;">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">User Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users_admin %}
+                <tr>
+                    <th scope="row">{{ user["_id"] }}</th>
+                    <td>{{ user["name"] }}</td>
+                    <td>{{ user["email"] }}</td>
+                    <td>{{ user["user_type"] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+<div class="card-wrapper">
+    <div class="card" style="width: auto">
+
+        <h2 style="text-align: center">Delete</h2>
+        <div class="form-group" style="margin:auto">
+            <label for="usr">ID:</label>
+            <form action="" method="POST">
+                <input name="delete_user" value="True" hidden>
+                <input type="text" class="form-control" name="_id" id="usr" required>
+                <div class="center" style="margin-left: -50%;padding-top:10px">
+                    <input type="submit" value="Delete" class="btn btn--secondary">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="card" style="width: auto">
+
+        <h2 style="text-align: center">Update</h2>
+        <div class="form-group" style="margin: auto">
+            <form action="" method="POST">
+                <input name="update_user" value="True" hidden>
+                <label for="usr">ID:</label>
+                <input type="text" class="form-control" name="_id" id="usr" required>
+                <label for="usr">Name:</label>
+                <input type="text" class="form-control" name="name" id="usr">
+                <label for="usr">Email:</label>
+                <input type="text" class="form-control" name="email" id="usr">
+                <label for="usr">Password:</label>
+                <input type="text" class="form-control" name="password" id="usr">
+                <div class="center" style="margin-left: -50%;padding-top:10px">
+                    <input type="submit" value="Update" class="btn btn--secondary">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card" style="width: auto">
+
+        <h2 style="text-align: center">Create</h2>
+        <div class="form-group" style="margin: auto">
+            <form action="" method="POST">
+                <input name="create_user" value="True" hidden>
+                <label for="usr">Name:</label>
+                <input type="text" class="form-control" name="name" id="usr" required>
+                <label for="usr">Email:</label>
+                <input type="text" class="form-control" name="email" id="usr" required>
+                <label for="usr">Password:</label>
+                <input type="text" class="form-control" name="password" id="usr" required>
+                <label for="usr">User Type:</label>
+                <input type="text" class="form-control" name="user_type" id="usr" required>
+                <div class="center" style="margin-left: -50%;padding-top:10px">
+                    <input type="submit" value="Create" class="btn btn--secondary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{#***********************************************************Expenses**********************************************************#}
+
+
+<div class="card-wrapper">
+    <div class="card" style="width: 100%">
+
+        <h2 class="center">All Expenses</h2>
+
+        <table class="table" style="margin-right: auto;margin-left: auto;border: 1px solid black;">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Email</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Comment</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for expense in expenses_admin %}
+                <tr>
+                    <th scope="row">{{ expense["_id"] }}</th>
+                    <td>{{ expense["email"] }}</td>
+                    <td>{{ expense["Amount"] }}</td>
+                    <td>{{ expense["Date"] }}</td>
+                    <td>{{ expense["Description"] }}</td>
+                    <td>{{ expense["Comment"] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+<div class="card-wrapper">
+    <div class="card" style="width: auto">
+
+        <h2 style="text-align: center">Delete</h2>
+        <div class="form-group" style="margin:auto">
+            <label for="usr">ID:</label>
+            <form action="" method="POST">
+                <input name="delete_exp" value="True" hidden>
+                <input type="text" class="form-control" name="_id" id="usr" required>
+                <div class="center" style="margin-left: -50%;padding-top:10px">
+                    <input type="submit" value="Delete" class="btn btn--secondary">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="card" style="width: auto">
+
+        <h2 style="text-align: center">Update</h2>
+        <div class="form-group" style="margin: auto">
+            <form action="" method="POST">
+                <input name="update_exp" value="True" hidden>
+                <label for="usr">ID:</label>
+                <input type="text" class="form-control" name="_id" id="usr" required>
+                <label for="usr">Amount:</label>
+                <input type="text" class="form-control" name="amount" id="usr">
+                <label for="usr">Description:</label>
+                <input type="text" class="form-control" name="description" id="usr">
+                <label for="usr">Comment:</label>
+                <input type="text" class="form-control" name="comment" id="usr">
+                <div class="center" style="margin-left: -50%;padding-top:10px">
+                    <input type="submit" value="Update" class="btn btn--secondary">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="card" style="width: auto">
+
+        <h2 style="text-align: center">Create</h2>
+        <div class="form-group" style="margin: auto">
+            <form action="" method="POST">
+                <input name="create_exp" value="True" hidden>
+                <label for="usr">Amount:</label>
+                <input type="text" class="form-control" name="amount" id="usr" required>
+                <label for="usr">Description:</label>
+                <input type="text" class="form-control" name="description" id="usr" required>
+                <label for="usr">Comment:</label>
+                <input type="text" class="form-control" name="comment" id="usr" required>
+                <label for="usr">Email:</label>
+                <input type="text" class="form-control" name="email" id="usr" required>
+                <div class="center" style="margin-left: -50%;padding-top:10px">
+                    <input type="submit" value="Create" class="btn btn--secondary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
